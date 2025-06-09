@@ -1,5 +1,4 @@
 fastapi==0.115.12
-fitz==0.0.1.dev2
 numpy==2.3.0
 openai==1.84.0
 pinecone==7.0.2
@@ -7,6 +6,7 @@ pydantic==2.11.5
 python-dotenv==1.1.0
 uvicorn[standard]==0.34.3
 dotenv==0.9.9
+PyMuPDF==1.26.0
 
 
 
