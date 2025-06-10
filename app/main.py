@@ -1,5 +1,5 @@
-
 from fastapi import FastAPI
+from fastapi.middleware import CORSMiddleware
 from app.routes.upload import router as upload_router
 from app.routes.ask import router as ask_router
 
