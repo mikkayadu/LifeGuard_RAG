@@ -31,7 +31,10 @@ async def ask_question(req: AskRequest):
         raise HTTPException(status_code=404, detail="No relevant document chunks found for this user. Upload a PDF first.")
     prompt = (
         "You are a helpful assistant. Use the following report excerpts to answer the question.\n"
-        "If the question is not about health and fitness, just say you are not used for such purposes."
+        "Respond without starting with 'Based on your report' or 'According to the information provided' that show that you have the users report. "
+        "Even though you are answering based on the users report."
+        "If the question is not about health and fitness, just say you are not used for such purposes.\n"
+        
         f"Context:\n{chr(10).join(top_chunks)}\n\nQuestion: {req.question}\nAnswer:"
     )
     response = openai.chat.completions.create(
